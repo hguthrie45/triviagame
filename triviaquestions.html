@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!-- Latest compiled and minified CSS & JS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.1/jquery.min.js"></script
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+	<title>Trivia Game</title>
+</head>
+<body>
+<div class="page-header" >
+  <h1 id= "title" style="margin-left: 40%">Trivia Game!</h1>
+  </div>
+
+
+
+<div class="jumbotron" style="width: 80%; margin-left: 10%">
+	<div class="container">
+		<script type="text/javascript">
+			var timeoutHandle;
+function countdown(countdown) {
+    var seconds = 30;
+ 
+    function tick() {
+        var counter = document.getElementById("timer");
+        var current_minutes = mins-1
+        seconds--;
+        counter.innerHTML =
+        current_minutes.toString() + ":" + (seconds < 10 ? "0" : "") + String(seconds);
+        if( seconds > 0 ) {
+            timeoutHandle=setTimeout(tick, 1000);
+        
+            }
+        }
+    }
+    tick();
+}
+
+countdown(2);
+		</script>
+		
+		<br>
+		<br>
+		
+		
+		<div id="questions" style="text-align: center;">
+		
+
+		<h3> The jetsons home was located in ________?</h3><br>
+		 <input id= "first" type="radio" name="firstquestion" value="true"> Skypad Apartments </input>
+		 	<br>
+		 <input id= "second" type="radio" name="firstquestion" value="false"> Futura Apartments </input>
+			<br>
+		 <input id= "third" type="radio" name="firstquestion" value="false"> Futurama Apartments </input>
+		 <br>
+		 <br>
+		 <br>
+		 <h3> ______________ is known for hitting 61 home runs in 1961.</h3><br>
+		 <input id= "fourth" type="radio" name="secondquestion" value="false"> Mickey Mantle </input>
+		 	<br>
+		 <input id= "fifth" type="radio" name="secondquestion" value="true"> Roger Marris </input>
+			<br>
+		 <input id= "sixth" type="radio" name="secondquestion" value="false"> Babe Ruth </input>
+		 <br>
+		 <br>
+		 <br>
+		 <h3> What is the Diameter of the Earth? </h3><br>
+		 <input id= "seventh" type="radio" name="thirdquestion" value="false"> 4000 Miles </input>
+		 	<br>
+		 <input id= "eighth" type="radio" name="thirdquestion" value="true"> 8000 miles </input>
+			<br>
+		 <input id= "ninth" type="radio" name="thirdquestion" value="false"> 16000 miles </input>
+		 <br>
+		 <br>
+		 <input type="button" value= "submit" onclick="submitted()">
+		 </div>
+		 <p id="firstpara"></p>
+		 <p id= "secondpara"></p>
+
+
+		</div>
+		</div>
+	<script type="text/javascript">
+		var firstquestion = document.getelementbyName("firstquestion");
+		var secondquestion = document.getelementbyName("secondquestion");
+		var thirdquestion = document.getelementbyName("thirdquestion");
+		var myarray =[ firstquestion, secondquestion, thirdquestion];
+		var score = 0;
+
+		function submitted (){
+			for (var i = 0; i < myarray.length; i++) {
+				 for(var o= 0;o<firstquestion.lenght;0++){
+				 	if(myarray[i][o].value== "true"&& myarray[i][o].checked){
+				 		firstpara.innerHTML += "you got question" + [i+1] + "correct!";
+				 		score++ 
+				 	}
+				 }
+			}
+		}
+
+
+
+
+
+
+
+
+
+
+	</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>		
